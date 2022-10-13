@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  .buttons {
+    margin-top: 34px;
+    align-items: center;
+    margin: 12px;
+  }
+  
+  .btn {
+    align-items: auto;
+    padding: 9px 14px;
+    border-radius: 15px;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 96px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
