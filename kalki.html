@@ -36,27 +36,33 @@
 </div>
 
 <script>
-  // Get all the images
-  const images = document.querySelectorAll("img");
+  // Define an array of the images to be swapped
+  const images = document.querySelectorAll('img');
 
-  // Set the current index to 0
-  let current = 0;
+  // Define a function to swap the positions of two elements
+  function swapElements(element1, element2) {
+    const temp = document.createElement('div');
+    element1.parentNode.insertBefore(temp, element1);
+    element2.parentNode.insertBefore(element1, element2);
+    temp.parentNode.insertBefore(element2, temp);
+    temp.parentNode.removeChild(temp);
+  }
 
-  // Add a function to swap the images
+  // Define a function to swap the positions of the images
   function swapImages() {
-    // Hide the current image
-    images[current].style.display = "none";
+    // Swap the first and last images
+    swapElements(images[0], images[images.length - 1]);
 
-    // Increment the current index, looping back to 0 if necessary
-    current = (current + 1) % images.length;
-
-    // Show the next image
-    images[current].style.display = "block";
+    // Swap each adjacent pair of images
+    for (let i = 0; i < images.length - 1; i++) {
+      swapElements(images[i], images[i + 1]);
+    }
   }
 
   // Call the swapImages function every 5 seconds
   setInterval(swapImages, 5000);
 </script>
+
 
 
     <audio controls="controls" id="audio" preload="auto" tabindex="0" type="audio/mpeg" 
